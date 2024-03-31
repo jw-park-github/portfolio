@@ -1,0 +1,68 @@
+#main-nav-toggle {
+    display: block;
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    background-color: #383434;
+}
+#main-header {
+    position: fixed;
+    color: white;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: transparent;
+}
+#main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.toggle-button {
+    background-color: #383434;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+.toggle-button:hover {
+    background-color: #f78b00;
+    color: #ffffff;
+}
+#main-nav-menu.active {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: #383434;
+    top: 5rem; /* Adjust top position to not overlap the toggle button */
+    right: 3rem;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+#main-nav-menu.active li {
+    margin: 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+#main-nav-menu.active li:last-child {
+    border-bottom: none;
+}
+#main-nav-menu.active li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+#main-nav-menu.active li a:hover {
+    background-color: #f78b00;
+}

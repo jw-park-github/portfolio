@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Project</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<th:block th:replace="~{fragments/fragmentHeader :: header}"></th:block>
+<section id="edits" class="edits">
+    <div class="container">
+        <div class="title">
+            <h4>'/projects'에 새 프로젝트 등록</h4>
+        <h2>Add New Project</h2>
+        </div>
+            <div class ="edit">
+                <div class="edit-inner">
+                        <input type="hidden" id="project-id" th:value="${project.id}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="제목" id="title" th:value="${project.title}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="이미지 URL" id="image" th:value="${project.image}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="구현 페이지 URL" id="result" th:value="${project.result}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="깃허브 URL" id="github" th:value="${project.github}">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="col-md-12" height="100%" rows="10" placeholder="내용" id="content" th:text="${project.content}"></textarea>
+                    </div>
+                        <button th:if="${project.id} != null" type="button" id="modify-btn" class="btn btn-primary btn-sm">수정</button>
+                        <button th:if="${project.id} == null" type="button" id="create-btn" class="btn btn-primary btn-sm">등록</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="/js/project.js"></script>
+<script src="/js/toggle.js"></script>
+</body>
+

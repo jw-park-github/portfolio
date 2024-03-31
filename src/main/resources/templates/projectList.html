@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+
+<!-- header -->
+<th:block th:replace="~{fragments/fragmentHeader :: header}"></th:block>
+
+<!-- '/projects' -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="title">
+            <h2>PROJECTS</h2>
+            <h6 id="unauthorized-user" th:if="${#authorization.expression('isAuthenticated() and !hasAuthority(''ROLE_ADMIN'')')}">
+                『※ 게시글 수정 권한이 없는 Unauthorized 계정으로 로그인 되었습니다』
+            </h6>
+            <h6 id="authorized-user" th:if="${#authorization.expression('isAuthenticated() and hasAuthority(''ROLE_ADMIN'')')}">
+                『Admin 계정으로 로그인 되었습니다』
+            </h6>
+        </div>
+
+            <div class="portfolio-section" id="portfolio-section" th:each="item : ${projects}">
+                <div class="portfolio-left">
+                    <img th:src="*{item.image}" alt="Project Image">
+                </div>
+                <div class="portfolio-right">
+                    <h3 th:text="${item.title}"></h3>
+                    <p th:utext="${item.content}"></p>
+                    <div id="portfolio-buttons">
+                        <a th:href="@{{result}(result=${item.result})}" type="button" id="fragment-result-btn" class="btn btn-danger" title="해당 프로젝트가 구현된 페이지로 이동합니다.">
+                            ▶ 구현 페이지
+                        </a>
+                        <a th:href="@{{github}(github=${item.github})}" type="button" id="fragment-github-btn" class="btn btn-danger" title="해당 프로젝트의 GitHub Repository로 이동합니다.">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a th:href="@{/new-project?id={id}(id=${item.id})}" th:if="${#authorization.expr('hasRole(''ADMIN'')')}" type="button" id="fragment-modify-btn" class="btn btn-secondary" title="해당 프로젝트를 수정합니다.">
+                            수정
+                        </a>
+                        <a th:href="@{/projects/{id}(id=${item.id})}" th:if="${#authorization.expr('hasRole(''ADMIN'')')}" type="button" id="fragment-delete-btn" class="btn btn-danger" title="해당 프로젝트를 삭제합니다.">
+                            삭제
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div style="clear: both;"></div>
+</section>
+<!-- //end PortFolio -->
+<th:block th:replace="~{fragments/fragmentFooter :: footer}"></th:block>
+<script src="/js/project.js"></script>
+<script src="/js/toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>박진우의 포트폴리오</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.2/css/boxicons.min.css">
+</head>
+
+<body>
+
+<th:block th:replace="~{fragments/fragmentHeader :: header}"></th:block>
+<!-- header 끝 -->
+
+<!--MAIN 시작 -->
+<main id="main">
+    <div class="container">
+        <div class="image-background">
+            <img th:if="${profile.mainImage}" th:src="${profile.mainImage}" alt="mainImage"/>
+        </div>
+        <h4>"박진우의 포트폴리오"</h4>
+        <h2 class="active"><span></span></h2>
+        <!--<a href="#" class="main-btn" title="외부 이력서 파일로 이동합니다." data-text="RESUME">RESUME</a>-->
+        <a href="/projects" class="main-btn" title="포트폴리오 페이지로 이동." data-text="PORTFOLIO">PORTFOLIO</a>
+        <button class="mouse" data-animation-scroll="true" data-target="#main-about">ABOUT ME<br>▼</button>
+    </div>
+</main>
+<!-- MAIN 끝-->
+
+<!-- ABOUT 시작-->
+<section id="main-about" class="main-about">
+    <div class="container" id="about-container">
+        <div class="title">
+            <h2>ABOUT</h2>
+        </div>
+        <div class="about-self">
+            <div class="about-inner">
+                <p th:utext="${profile.about}"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<div class="bg"></div>
+-->
+
+<!-- OTHER 시작 -->
+<section id="main-other" class="main-other">
+    <div class="container">
+        <div class="title">
+            <h2>OTHERS</h2>
+        </div>
+        <div class="others" id="others">
+
+            <div class="others-inner">
+                <div class="other-title">
+                    Frontend
+                </div>
+                <img th:if="${profile.otherOne}" th:src="${profile.otherOne}" alt="otherOne"/>
+            </div>
+
+            <div class="others-inner">
+                    <div class="other-title">
+                        Backend
+                    </div>
+                    <img th:if="${profile.otherTwo}" th:src="${profile.otherTwo}" alt="otherTwo"/>
+            </div>
+
+            <div class="others-inner">
+                <div class="other-title">
+                    Cloud Computing
+                </div>
+                <img th:if="${profile.otherThree}" th:src="${profile.otherThree}" alt="otherThree"/>
+            </div>
+
+            <div class="others-inner">
+                <div class="other-title">
+                    Collaboration Tool
+                </div>
+                <img th:if="${profile.otherFour}" th:src="${profile.otherFour}" alt="otherFour"/>
+            </div>
+
+            <div class="others-inner">
+                <div class="other-title">
+                    Education
+                </div>
+                <img th:if="${profile.otherFive}" th:src="${profile.otherFive}" alt="otherFive"/>
+            </div>
+
+            <div class="others-inner">
+                <div class="other-title">
+                    etc.
+                </div>
+                <img th:if="${profile.otherSix}" th:src="${profile.otherSix}" alt="otherSix"/>
+            </div>
+            </div>
+        </div>
+</section>
+<!-- OTHERS 끝 -->
+
+<!-- footer -->
+<th:block th:replace="~{fragments/fragmentFooter :: footer}"></th:block>
+
+<script src="/js/index.js"></script>
+<script src="/js/toggle.js"></script>
+</body>
+</html>

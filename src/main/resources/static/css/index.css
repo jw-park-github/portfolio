@@ -1,0 +1,1017 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
+/* header 시작 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+a, a:link, a:visited{
+    color:inherit; /* 텍스트 링크 색상을 상위 요소에서 상속받도록 설정 */
+    text-decoration:none;
+}
+li{
+    list-style:none;
+}
+
+.container{
+    width:1140px;
+    margin:0 auto;
+}
+
+
+
+/* header 시작 */
+#main-nav-toggle {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    background-color: #383434;
+    width: 7.3rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+    0%, 80% {
+        color: #ffffff;
+    }
+    81%, 100% {
+        color: #70b43c;
+    }
+}
+
+#main-nav-toggle:hover {
+    transform: scale(1.1);
+}
+
+#main-header {
+    position: fixed;
+    color: white;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: transparent;
+}
+#main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    padding: 0 20px;
+}
+
+#main-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.toggle-button {
+    display: inline-block;
+    background-color: #383434;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-button:hover {
+    background-color: #08744c;
+    color: #ffffff;
+}
+
+#main-nav-menu.active {
+    display: block;
+    position: absolute;
+    background-color: #383434;
+    top: 5.5rem;
+    right: 1.5rem;
+    width: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#main-nav-menu.active li {
+    margin: 0;
+    border-bottom: 1px solid #ffffff;
+
+}
+
+#main-nav-menu.active li:last-child {
+    border-bottom: none;
+}
+
+#main-nav-menu.active li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+}
+
+#main-nav-menu.active li a:hover {
+    background-color: #08744c;
+}
+/* header 끝 */
+
+/* footer */
+#footer {
+    background: #f7f8f9;
+    color: #45505b;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.7rem 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#footer p {
+    font-size: 1rem;
+    padding: 0;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-family:'Varela Round', sans-serif;
+}
+
+#footer .texts {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+#footer-section {
+    margin-top:1.2rem;
+    padding: 0;
+}
+
+#footer-icon {
+    font-size:2rem;
+}
+
+/* MAIN 시작 */
+
+
+main {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background:linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), center center;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.image-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main h4{
+    font-size: 4rem;
+    font-weight: 200;
+    font-family: "Black Han Sans", sans-serif;
+    font-style: normal;
+}
+main h2 {
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    /*color: #086444;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;*/
+}
+main h2 span::after{
+    content:"";
+    height:40px;
+    width:3px;
+    background-color:#fff;
+    display:inline-block;
+    animation: blink .7s ease-in-out infinite;
+}
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+main p{
+    max-width:500px;
+    margin:0 auto;
+    font-size:1.25rem;
+}
+/* '/' 전체 페이지 수정 버튼*/
+#edit-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: #383434;
+    position: absolute;
+    padding: 0.6rem;
+    border: 2px solid white;
+}
+#edit-btn:hover {
+    color: #08744c;
+    border-color: #08744c;
+}
+
+/* main 페이지의 PORTFOLIO 링크 버튼*/
+.main-btn {
+    display: inline-block;
+    width: 40%;
+    font-size: 2.5rem;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border: 6px solid white;
+    border-radius: 5px;
+    background: #383434;
+    color: white;
+    overflow: hidden;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+    position: relative;
+}
+
+.main-btn:before, .main-btn:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.main-btn:before {
+    background: #70b43c;
+    color: #fff;
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(90deg);
+}
+
+.main-btn:hover:before {
+    transform: translateY(0) rotateX(0deg);
+}
+
+.main-btn:after {
+    background: #383434;
+    color: #fff;
+    transform-origin: top;
+    transform: translateY(0) rotateX(0deg);
+}
+
+.main-btn:hover:after {
+    transform: translateY(100%) rotateX(90deg);
+}
+
+/* main 페이지의 RESUME 링크 버튼
+main button.download{
+    background-color:transparent;
+    border:3px solid white;
+    border-radius:20px;
+    padding:1rem 2rem;
+    margin-top:3rem;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}*/
+/* ABOUT ME 동적인 화살표 버튼 */
+main button.mouse{
+    background-color:transparent;
+    border:none;
+    color:white;
+    font-size:1rem;
+    font-weight: bold;
+    position:absolute;
+    bottom:1rem;
+    left:50%;
+    transform:translateX(-50%);
+    animation:upDown 1s ease-in-out infinite;
+    cursor:pointer;
+}
+@keyframes upDown{
+    0%{
+        bottom:1rem;
+    }
+    50%{
+        bottom:1.5rem;
+    }
+    100%{
+        bottom:1rem;
+    }
+}
+/* MAIN 끝 */
+
+
+/* 전체 section 설정 */
+section{
+    font-family:'Poppins', sans-serif;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+section .title{
+    margin-bottom:2rem;
+}
+section .title h4{
+    font-size:1.35rem;
+    color:#ed4848;
+    position:relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+section .title h2{
+    font-size:3rem;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left:1rem;
+}
+section .title h2 strong{
+    font-size:2.5rem;
+    font-weight: 300;
+    color:#ed4848;
+}
+section .title p{
+    font-size:1.15rem;
+}
+
+
+/* ABOUT 시작 */
+
+
+section .about-self::after{
+    content:"";
+    clear:both;
+    display:block;
+}
+section .title{
+    margin-bottom:2rem;
+}
+section .title h4{
+    font-size:1rem;
+    color:#000000;
+    position:relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+section .title h2{
+    font-size:3.5rem;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+#about-container {
+    position: relative;
+    background-color: transparent;
+}
+
+#about-container::before,
+#about-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1%;
+    background-color: #70b43c;
+}
+
+#about-container::before {
+    left: 0;
+}
+
+#about-container::after {
+    right: 0;
+}
+
+section .about-self .about-inner{
+    width:100%;
+    text-align: left;
+}
+section .about-self .about-inner h3{
+    font-size:2.25rem;
+    margin-bottom:1rem;
+}
+section .about-self .about-inner h3 strong{
+    color:#ed4848;
+}
+section .about-self .about-inner p{
+    font-size:1.15rem;
+    margin-top:0;
+    margin-left:1rem;
+    margin-right:1rem;
+    margin-bottom:1rem;
+    line-height: 2.3rem;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+section .about-self .about-inner .social a{
+    font-size:2rem;
+}
+/* ABOUT 끝 */
+
+
+/* OTHERS 시작 */
+#main-other {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+section .others {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%
+}
+
+/*
+#others-container {
+    position: relative;
+    background-color: transparent;
+}
+
+#others-container::before,
+#others-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1%;
+    background-color: #70b43c;
+}
+
+#others-container::before {
+    left: 0;
+}
+
+#others-container::after {
+    right: 0;
+}
+*/
+section .others .others-inner {
+    background-color: #fff;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    /*box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    width: 28%;
+}
+
+section .others .others-inner img {
+    display: block;
+    border-radius: 2rem;
+    width: 100%;
+    padding:0.7rem;
+}
+
+section .others .others-inner .other-title {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ccc;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #000000;
+    text-align: center;
+}
+
+/*
+.img-overlay-container {
+    position: relative;
+
+}
+.img-overlay-container img {
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+}
+.text {
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+.others-inner:hover .overlay {
+    opacity: 1;
+}*/
+
+/* OTHERS 끝 */
+
+
+/* '/edit' 화면 시작 */
+section.edits {
+    margin-top: 3rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+section.edits h4{
+    font-size:1.2rem;
+    font-weight: bolder;
+    margin-bottom:0.3rem;
+}
+section.edits h2{
+    font-size:3.5rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family:"Black Han Sans", sans-serif;
+}
+
+section.edits .edit::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+section.edits .edit .edit-inner {
+    width:100%;
+    margin-bottom:2rem;
+    margin-right: 3rem;
+    border:2px solid #383434;
+    border-radius: 2rem;
+    padding:2rem;
+}
+section.edits .edit .edit-inner .form-group{
+    margin-bottom:1.25rem;
+}
+section.edits .edit .edit-inner .form-group label{
+    display:block;
+    margin-bottom:0.85rem;
+}
+section.edits .edit .edit-inner .form-group input{
+    padding:0.625rem;
+    width:100%;
+    outline:none;
+    border:2px solid #A2A4A4;
+    border-radius:10px;
+}
+section.edits .edit .edit-inner .form-group input:focus{
+    border:1px solid #719ECE;
+    box-shadow:0 0 10px #719ECE;
+}
+section.edits .edit .edit-inner .form-group textarea{
+    height:200px;
+    width:100%;
+    resize:none;
+    border:1px solid #383434;
+    border-radius:10px;
+    padding:0.5rem;
+}
+section.edits .edit .edit-inner .form-group textarea:focus{
+    outline:none;
+    border:1px solid #719ECE;
+    box-shadow:0 0 10px #719ECE;
+}
+section.edits .edit .edit-inner button{
+    width:100%;
+    padding:0.5rem;
+    background-color:#086444;;
+    border:none;
+    border-radius: 2rem;
+    color:white;
+}
+
+
+/* '/projects' 화면 시작*/
+section.portfolio {
+    margin-top: 4rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#portfolio-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2rem;
+    background-color: #f7f8f9;
+}
+
+.portfolio-section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.portfolio-left, .portfolio-right {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.portfolio-left img {
+    width: 100%;
+    padding: 1rem;
+}
+
+#portfolio-buttons {
+    display: flex;
+    justify-content: start;
+    padding: 0.6rem;
+}
+
+.portfolio-right {
+    padding: 1.5rem;
+}
+.portfolio-right h3 {
+    font-size: 3rem;
+    font-weight: bolder;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
+.portfolio-right p {
+    font-size:1.2rem;
+    font-weight: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0.6rem;
+}
+#authorized-user {
+    font-size: 1rem;
+    color: #086444;;
+    font-weight: bolder;
+}
+#unauthorized-user {
+    font-size: 1rem;
+    color: red;
+    font-weight: bolder;
+}
+
+#fragment-result-btn {
+    color: white;
+    background-color: #c4302b;
+    border: 2px solid #000000;
+    padding: 0.1rem 0.2rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#fragment-result-btn:hover {
+    color: black;
+    background-color: #c4302b;
+    border-color: black;
+    transform: translateY(-2.5px);
+}
+#fragment-github-btn {
+    color: white;
+    background-color: black;
+    border: 2px solid #383434;
+    padding: 0.1rem 0.2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#fragment-github-btn:hover {
+    color: white;
+    background-color: black;
+    border-color: red;
+    transform: translateY(-2.5px);
+}
+#fragment-modify-btn {
+    color: white;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+
+}
+#fragment-delete-btn {
+    color: white;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+}
+/* '/projects' 화면 스타일 끝*/
+
+
+
+/* 미디어 쿼리 시작*/
+@media screen and (max-width: 1140px){
+    main .container{
+        width: 992px;
+    }
+    section .container{
+        width:600px;
+    }
+    section .others .others-inner {
+        flex: 1 0 calc(33.333% - 2rem);
+    }
+}
+
+@media (max-width: 992px){
+    html{
+        font-size: 14px;
+    }
+    main .container{
+        width: 768px;
+    }
+}
+
+
+@media (max-width: 768px){
+    html{
+        font-size: 13px;
+    }
+    main .container{
+        width: 576px;
+    }
+    .main-btn {
+        width:80%;
+    }
+    section .container{
+        width:400px;
+    }
+    section .others .others-inner {
+        flex: 1 0 calc(50% - 2rem);
+    }
+    .portfolio-left, .portfolio-right {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .portfolio-section, .portfolio-left, .portfolio-right {
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 576px){
+    html{
+        font-size: 11px;
+        width: 100%;
+    }
+    main .container{
+        width: 100%;
+    }
+    main h4{
+        font-size: 3rem;
+    }
+    section .container{
+        width: 100%;
+    }
+    section .title h2{
+        font-size: 3rem;
+    }
+
+    #others {
+        width: 90%;
+    }
+
+    section .others {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 90%;
+    }
+
+    section .others .others-inner {
+        flex: 1 0 calc(50% - 2rem);
+    }
+
+    #main-about {
+        width: 100%
+    }
+
+    #main-other {
+        width: 100%
+    }
+
+    #portfolio-section {
+        width:90%
+    }
+
+    .portfolio-left, .portfolio-right {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .portfolio-section, .portfolio-left, .portfolio-right {
+        padding: 0.5rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .portfolio-right h3 {
+        font-size: 2rem;
+        font-weight: bolder;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+    }
+    .portfolio-right p {
+        font-size:1rem;
+        font-weight: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0.6rem;
+    }
+
+}
+
+@media (max-width: 420px){
+    html{
+        font-size: 11px;
+        width: 100%;
+    }
+    main .container{
+        width: 100%;
+    }
+    main h4{
+        font-size: 3rem;
+    }
+    section .container{
+        width: 100%;
+    }
+    section .title h2{
+        font-size: 3rem;
+    }
+
+    #others {
+        width: 90%;
+    }
+
+    section .others {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 90%;
+    }
+
+    section .others .others-inner {
+        flex: 1 0 100%;
+    }
+
+    #main-about {
+        width: 100%
+    }
+
+    #main-other {
+        width: 100%
+    }
+
+    #portfolio-section {
+        width:90%
+    }
+
+    .portfolio-left, .portfolio-right {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .portfolio-section, .portfolio-left, .portfolio-right {
+        padding: 0.5rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .portfolio-right h3 {
+        font-size: 2rem;
+        font-weight: bolder;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+    }
+    .portfolio-right p {
+        font-size:1rem;
+        font-weight: bolder;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 360px){
+    html{
+        font-size: 11px;
+        width: 100%;
+    }
+    main .container{
+        width: 100%;
+    }
+    main h4{
+        font-size: 3rem;
+    }
+    section .container{
+        width: 100%;
+    }
+    section .title h2{
+        font-size: 4rem;
+    }
+
+    #others {
+        width: 90%;
+    }
+
+    section .others {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 90%;
+    }
+
+    section .others .others-inner {
+        flex: 1 0 100%;
+    }
+
+    #main-about {
+        width: 100%
+    }
+
+    #main-other {
+        width: 100%
+    }
+
+    #portfolio-section {
+        width:90%
+    }
+
+    .portfolio-left, .portfolio-right {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .portfolio-section, .portfolio-left, .portfolio-right {
+        padding: 0.5rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .portfolio-right h3 {
+         font-size: 2rem;
+         font-weight: bolder;
+         word-wrap: break-word;
+         overflow-wrap: break-word;
+
+     }
+    .portfolio-right p {
+        font-size:1rem;
+        font-weight: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0.6rem;
+    }
+
+}
+

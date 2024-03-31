@@ -1,0 +1,29 @@
+<header id="main-header" th:fragment="header">
+    <div id="main-container">
+        <h1>
+        </h1>
+        <nav>
+            <button id="main-nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+            <ul id="main-nav-menu">
+                <li>
+                    <a href="/" class="toggle-button">HOME</a>
+                </li>
+                <li>
+                    <a href="/projects" class="toggle-button">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="/login" class="toggle-button" th:if="${#authorization.expression('!isAuthenticated()')}">LOG IN</a>
+                    <a href="/logout" class="toggle-button" th:if="${#authorization.expression('isAuthenticated()')}">LOG OUT</a>
+                </li>
+                <li>
+                    <a href="/edit" class="toggle-button" th:if="${#authorization.expression('isAuthenticated() and hasAuthority(''ROLE_ADMIN'')')}">Edit Main Page</a>
+                </li>
+                <li th:if="${#authorization.expr('hasRole(''ADMIN'')')}">
+                    <a href="/new-project" class="toggle-button" title="새로운 프로젝트를 추가합니다.">
+                        Add New Project
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

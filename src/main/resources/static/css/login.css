@@ -1,0 +1,168 @@
+body {
+    background: transparent;
+    background: url("https://res.cloudinary.com/practicaldev/image/fetch/s--z_y4wDUd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://thepracticaldev.s3.amazonaws.com/i/n9b2p3j0h1mdqvms3ogc.gif") center center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-box {
+    width: 100%;
+    background: #383434;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 2rem;
+}
+
+.login-key {
+    margin-top: 0.9375rem;
+    margin-bottom: 2rem;
+    height: 3.75rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    background: #086444;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-title {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 3.125rem;
+    letter-spacing: 0.125rem;
+    font-weight: bold;
+    color: #ECF0F5;
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+input[type=text] {
+    background-color: #ECF0F5;
+    border: none;
+    border-bottom: 2px solid #000000;
+    border-top: 0px;
+    border-radius: 2px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+input[type=password] {
+    background-color: #ECF0F5;
+    border: none;
+    border-bottom: 2px solid #000000;
+    border-top: 0px;
+    border-radius: 2px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #086444;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ffffff;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#login-btn {
+    color: #ffffff;
+    border: 2px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 50%;
+    margin-bottom: 0.5rem;
+}
+
+#signup-btn {
+    color: #ffffff;
+    border: 2px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 50%;
+    margin-bottom: 0.5rem;
+}
+
+#login-btn:hover, #signup-btn:hover {
+    background-color: #086444;
+    transform: scale(1.03, 1.03);
+}
+
+.loginbttm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-button, .signup-btn-class {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.form-group, .login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"], input[type="password"] {
+    margin-bottom: 20px; /* Adds spacing between form inputs */
+}
+
+.signup-text-class {
+    font-size: 50px;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        margin: 0 20px; /* 화면이 작을 때 좌우 여백을 줍니다. */
+        width: auto; /* 박스의 너비를 화면에 맞춥니다. */
+    }
+
+
+
+
+}
