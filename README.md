@@ -1,10 +1,11 @@
 
 # Portfolio
+
 >개발자 지망생을 위한 포트폴리오 웹사이트입니다.<br>
 >코드 수정과 재배포의 번거로움 없이 관리자 계정을 통해 편리하게 사이트를 관리할 수 있습니다. 
 
 
-## 2. 개요
+## 1. 프로젝트 개요
 <strong>ㆍ 시행처</strong>: [구름 x 인프런] 자바 스프링 & 리액트 풀스택 개발자 성장 과정<br><br>
 <strong>ㆍ 기간</strong>: 2023.12~2024.03<br><br>
 <strong>ㆍ 프로그래밍 언어</strong>: Java, HTML, CSS, JavaScript<br><br>
@@ -14,55 +15,64 @@
 <strong>ㆍ DBMS</strong>: MySQL, H2<br><br>
 <strong>ㆍ 배포</strong>: AWS EC2<br><br>
 
-## 4. 주요 기능
-* 메인 화면(ABOUT, OTHERS) 및 포트폴리오 CRUD 기능
+## 2. 주요 기능
+* 메인 화면(ABOUT, OTHERS) CRUD 기능
+  
+* 포트폴리오(PROJECTS) CRUD 기능
+  
+* 외부 URL 참조를 통한 이미지 등록
+  
 * 회원가입
+  
 * 로그인
+  
 * 유효성 검사 및 중복 검사
-* 게시물 CRUD 권한이 부여된 관리자 계정 
-<br>
+  
+* 게시물 CRUD 권한이 부여된 관리자 계정
 
-## 5. 실행 화면
-<strong>[[메인 화면]](https://jw-park.com/)</strong><br><br>
+## 3. 실행 화면
+<strong>[[메인 화면]](https://jw-park.com/)</strong><br>
 <img width="960" alt="MAIN_PAGE" src="https://github.com/jw-park-github/portfolio/assets/165545220/ac137033-0bd5-4964-ad75-31064c627c0e"><br><br>
 <img width="960" alt="ABOUT_OTHERS" src="https://github.com/jw-park-github/portfolio/assets/165545220/db072cae-ffb4-441f-9e8d-4032b25f4113"><br>
 
 ---
 
-<strong>[메인 화면 수정]</strong><br><br>
+<strong>[메인 화면 수정]</strong><br>
 <img width="960" alt="UPDATE_MAIN_PAGE" src="https://github.com/jw-park-github/portfolio/assets/165545220/8ed70e98-fc9d-43d1-addc-3ac1a755d931"><br>
 
 ---
 
-<strong>[[전체 포트폴리오 목록]](https://jw-park.com/projects)</strong><br><br>
+<strong>[[전체 포트폴리오 목록]](https://jw-park.com/projects)</strong><br>
 <img width="960" alt="PROJECTS_LIST" src="https://github.com/jw-park-github/portfolio/assets/165545220/c673a361-129c-41cc-ad3f-dce9bb09e8ed"><br>
 
 ---
 
-<strong>[포트폴리오 생성]</strong><br><br>
+<strong>[포트폴리오 생성]</strong><br>
 <img width="960" alt="CREATE_PROJECT" src="https://github.com/jw-park-github/portfolio/assets/165545220/388e4a46-cf3e-4bbd-b570-974762d37b0a"><br>
 
 ---
 
-<strong>[포트폴리오 수정]</strong><br><br>
+<strong>[포트폴리오 수정]</strong><br>
 <img width="960" alt="UPDATE_PROJECT" src="https://github.com/jw-park-github/portfolio/assets/165545220/3d1a7873-c9ce-4deb-8361-4d381c95c4a5"><br>
 
 ---
 
-<strong>[포트폴리오 삭제]</strong><br><br>
+<strong>[포트폴리오 삭제]</strong><br>
 <img width="960" alt="DELETE_PROJECT" src="https://github.com/jw-park-github/portfolio/assets/165545220/86d5f297-4612-4b9a-962c-0b6879e32da9"><br>
 
 ---
 
-<strong>[[회원 가입]](https://jw-park.com/signup)</strong><br><br>
+<strong>[[회원 가입]](https://jw-park.com/signup)</strong><br>
 <img width="960" alt="SIGNUP" src="https://github.com/jw-park-github/portfolio/assets/165545220/8b12a78b-87e3-4c08-97dd-60e42346b1a1"><br>
 
 ---
 
-<strong>[[로그인]](https://jw-park.com/login)</strong><br><br>
+<strong>[[로그인]](https://jw-park.com/login)</strong><br>
 <img width="960" alt="LOGIN" src="https://github.com/jw-park-github/portfolio/assets/165545220/ae1c156a-e74a-4783-866d-127cb3b33803">
+
 <br>
-## 6. DB 설계
+
+## 4. DB 설계
 <strong>[[ER-다이어그램](https://lh3.googleusercontent.com/pw/AP1GczO-BjIWtEDp3Ug5IfjGofaIV2mjnaB6fg55ZkwVLFlsNLbQEqSKD3BKL8ZZbmfdXDvkOqZWPXURhbiBJ0ZK3IgIzCncbZ0V82B93ahkZQ2eN6lMrVFqGzmaYaIoktke4lw25XDiPMdvpHZ7k7z-mgZh=w736-h536-s-no-gm?authuser=0)]</strong>
 
 ### **Users**
@@ -98,7 +108,8 @@
 | otherFive | string | Not Null               | OTHERS의 5번 이미지 |
 | otherSix  | string | Not Null               | OTHERS의 6번 이미지 |
 <br>
-## 7. API 설계
+
+## 5. API 설계
 
 #### 프로젝트 관리 API
 
