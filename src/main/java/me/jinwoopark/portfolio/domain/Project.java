@@ -26,16 +26,16 @@ public class Project {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "image", length = 20000, nullable = false)
+    @Column(name = "image", length = 300, nullable = false)
     private String image;
 
-    @Column(name = "result", length = 20000, nullable = false)
+    @Column(name = "result", length = 300, nullable = false)
     private String result;
 
-    @Column(name = "github", length = 20000, nullable = false)
+    @Column(name = "github", length = 300, nullable = false)
     private String github;
 
-    @Column(name = "content", length = 20000, nullable = false)
+    @Column(name = "content", length = 300, nullable = false)
     private String content;
 
     @CreatedDate
