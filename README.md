@@ -32,7 +32,7 @@
 
 ## 3. 실행 화면
 <strong>[[메인 화면]](https://jw-park.com/)</strong><br>
-<img width="960" alt="MAIN_PAGE" src="https://github.com/jw-park-github/portfolio/assets/165545220/ac137033-0bd5-4964-ad75-31064c627c0e"><br><br>
+<img width="960" alt="MAIN_PAGE_2" src="https://github.com/jw-park-github/portfolio/assets/165545220/15bb7610-75d1-4e82-b55d-b3a01018be46"><br><br>
 <img width="960" alt="ABOUT_OTHERS" src="https://github.com/jw-park-github/portfolio/assets/165545220/db072cae-ffb4-441f-9e8d-4032b25f4113"><br>
 
 ---
