@@ -5,43 +5,20 @@ const createBtn = document.getElementById("create-btn");
 let todos = [];
 
 createBtn.addEventListener('click', createNewTodo);
-// addEventListener  => 어떠한 이벤트가 발생했을 때 함수를 등록.
 function createNewTodo() {
-    // 새로운 아이템 객체 생성
     const item = {
-        id: new Date().getTime(), //1690604133472
+        id: new Date().getTime(), 
         text: "",
         complete: false
     }
-
-    // 배열에 처음에 새로운 아이템을 추가
     todos.unshift(item);
-
-    // 요소 생성하기
     const { itemEl, inputEl } = createTodoElement(item);
-
-    // 리스트 요소 안에 방금 생성한 아이템 요소 추가(가장 첫번째 요소로 추가)
     list.prepend(itemEl);
-
-    // disabled 속성 제거
     inputEl.removeAttribute("disabled");
-    // input 요소에 focus
     inputEl.focus();
-
     saveToLocalStorage();
 }
 
-/* <div class="item">
-	<input type="checkbox" />
-	<input
-		type="text"
-		value="Todo content goes here"
-		disabled />
-	<div class="actions">
-		<button class="material-icons">edit</button>
-		<button class="material-icons remove-btn">remove_circle</button>
-	</div>
-</div> */
 function createTodoElement(item) {
     const itemEl = document.createElement("div");
     itemEl.classList.add("item");
