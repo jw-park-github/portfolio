@@ -22,7 +22,7 @@
 * 회원가입
 * 로그인
 * 유효성 검사 및 중복 검사
-* 게시물 CRUD 권한이 부여된 관리자 계정
+* 게시물 CRUD 권한이 부여된 관리자 계정<br>
 
 ## 3. DB 설계
 <strong>[[ER-다이어그램](https://lh3.googleusercontent.com/pw/AP1GczO-BjIWtEDp3Ug5IfjGofaIV2mjnaB6fg55ZkwVLFlsNLbQEqSKD3BKL8ZZbmfdXDvkOqZWPXURhbiBJ0ZK3IgIzCncbZ0V82B93ahkZQ2eN6lMrVFqGzmaYaIoktke4lw25XDiPMdvpHZ7k7z-mgZh=w736-h536-s-no-gm?authuser=0)]</strong>
@@ -71,6 +71,8 @@
 | GET    | Show Edit Page | /edit | None  | None  | 200    | HTML page with profile data      |
 | POST   | Update Profile | /update | None | mainImage, about, otherOne, otherTwo, otherThree, otherFour, otherFive, otherSix | 302 (Redirect) | Redirect to main page |
 
+<br>
+
 ### ProjectApiController
 
 | Method | API            | Path             | Query | Body                | Status | JSON Result                  |
@@ -81,6 +83,8 @@
 | DELETE | Delete Project | /api/projects/{id} | None | None              | 200    | None                         |
 | PUT    | Update Project | /api/projects/{id} | None | UpdateProjectRequest | 200  | Project                      |
 
+<br>
+
 ### ProjectViewController
 
 | Method | API            | Path         | Query | Body | Status | JSON Result                      |
@@ -89,6 +93,8 @@
 | GET    | Get Project by ID | /projects/{id} | None | None | 200 | HTML page with project data       |
 | GET    | New Project    | /new-project | id (optional) | None | 200 | HTML page for creating a new project |
 
+<br>
+
 ### UserApiController
 
 | Method | API            | Path   | Query | Body            | Status | JSON Result           |
@@ -96,12 +102,16 @@
 | POST   | Signup         | /user  | None  | AddUserRequest  | 302 (Redirect) | Redirect to login page |
 | GET    | Logout         | /logout | None  | None            | 302 (Redirect) | Redirect to login page |
 
+<br>
+
 ### UserViewController
 
 | Method | API            | Path   | Query | Body | Status | JSON Result           |
 |--------|----------------|--------|-------|------|--------|-----------------------|
 | GET    | Login          | /login | None  | None | 200    | HTML login page       |
 | GET    | Signup Page    | /signup | None | None | 200    | HTML signup page      |
+
+<br>
 
 ### EtcController
 
