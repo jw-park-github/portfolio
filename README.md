@@ -17,18 +17,102 @@
 
 ## 2. 주요 기능
 * 메인 화면(ABOUT, OTHERS) CRUD 기능
-  
 * 포트폴리오(PROJECTS) CRUD 기능
-  
 * 외부 URL 참조를 통한 이미지 등록
-  
 * 회원가입
-  
 * 로그인
-  
 * 유효성 검사 및 중복 검사
-  
 * 게시물 CRUD 권한이 부여된 관리자 계정
+
+## 3. DB 설계
+<strong>[[ER-다이어그램](https://lh3.googleusercontent.com/pw/AP1GczO-BjIWtEDp3Ug5IfjGofaIV2mjnaB6fg55ZkwVLFlsNLbQEqSKD3BKL8ZZbmfdXDvkOqZWPXURhbiBJ0ZK3IgIzCncbZ0V82B93ahkZQ2eN6lMrVFqGzmaYaIoktke4lw25XDiPMdvpHZ7k7z-mgZh=w736-h536-s-no-gm?authuser=0)]</strong>
+
+### **Users**
+
+| 필드명     | 자료형 | 제약 조건            | 설명         |
+|----------|------|------------------|------------|
+| id       | long | PK, Not Null, Increment | 고유값   |
+| email    | string | Not Null           | 이메일 주소 |
+| password | string | Not Null           | 비밀번호    |
+
+### **Projects**
+
+| 필드명   | 자료형  | 제약 조건                | 설명            |
+|---------|-------|----------------------|---------------|
+| id      | long  | PK, Not Null, Increment | 고유값         |
+| title   | string | Not Null               | 프로젝트명       |
+| image   | string | Not Null               | 프로젝트 이미지    |
+| result  | string | Not Null               | 구현 페이지 링크  |
+| github  | string | Not Null               | 깃허브 링크      |
+| content | string | Not Null               | 프로젝트 설명     |
+
+### **Profiles**
+
+| 필드명      | 자료형  | 제약 조건                | 설명              |
+|-----------|-------|----------------------|-----------------|
+| id        | long  | PK, Not Null, Increment | 고유값           |
+| mainImage | string | Not Null               | 배경 이미지        |
+| about     | string | Not Null               | 자기 소개         |
+| otherOne  | string | Not Null               | OTHERS의 1번 이미지 |
+| otherTwo  | string | Not Null               | OTHERS의 2번 이미지 |
+| otherThree | string | Not Null               | OTHERS의 3번 이미지 |
+| otherFour | string | Not Null               | OTHERS의 4번 이미지 |
+| otherFive | string | Not Null               | OTHERS의 5번 이미지 |
+| otherSix  | string | Not Null               | OTHERS의 6번 이미지 |
+<br>
+
+## 4. API 설계
+
+### ProfileController
+
+| Method | API            | Path  | Query | Body  | Status | JSON Result                      |
+|--------|----------------|-------|-------|-------|--------|----------------------------------|
+| GET    | Show Main Page | /     | None  | None  | 200    | HTML page with profile data      |
+| GET    | Show Edit Page | /edit | None  | None  | 200    | HTML page with profile data      |
+| POST   | Update Profile | /update | None | mainImage, about, otherOne, otherTwo, otherThree, otherFour, otherFive, otherSix | 302 (Redirect) | Redirect to main page |
+
+### ProjectApiController
+
+| Method | API            | Path             | Query | Body                | Status | JSON Result                  |
+|--------|----------------|------------------|-------|---------------------|--------|------------------------------|
+| POST   | Add Project    | /api/projects    | None  | AddProjectRequest   | 201    | Project                      |
+| GET    | Find All Projects | /api/projects | None  | None                | 200    | List of ProjectResponse      |
+| GET    | Find Project by ID | /api/projects/{id} | None | None              | 200    | ProjectResponse              |
+| DELETE | Delete Project | /api/projects/{id} | None | None              | 200    | None                         |
+| PUT    | Update Project | /api/projects/{id} | None | UpdateProjectRequest | 200  | Project                      |
+
+### ProjectViewController
+
+| Method | API            | Path         | Query | Body | Status | JSON Result                      |
+|--------|----------------|--------------|-------|------|--------|----------------------------------|
+| GET    | Get Projects   | /projects    | None  | None | 200    | HTML page with list of projects  |
+| GET    | Get Project by ID | /projects/{id} | None | None | 200 | HTML page with project data       |
+| GET    | New Project    | /new-project | id (optional) | None | 200 | HTML page for creating a new project |
+
+### UserApiController
+
+| Method | API            | Path   | Query | Body            | Status | JSON Result           |
+|--------|----------------|--------|-------|-----------------|--------|-----------------------|
+| POST   | Signup         | /user  | None  | AddUserRequest  | 302 (Redirect) | Redirect to login page |
+| GET    | Logout         | /logout | None  | None            | 302 (Redirect) | Redirect to login page |
+
+### UserViewController
+
+| Method | API            | Path   | Query | Body | Status | JSON Result           |
+|--------|----------------|--------|-------|------|--------|-----------------------|
+| GET    | Login          | /login | None  | None | 200    | HTML login page       |
+| GET    | Signup Page    | /signup | None | None | 200    | HTML signup page      |
+
+### EtcController
+
+| Method | API          | Path          | Query | Body | Status | JSON Result    |
+|--------|--------------|---------------|-------|------|--------|----------------|
+| GET    | Show Youtube | /youtube      | None  | None | 200    | "youtube"      |
+| GET    | Show Netflix | /netflix      | None  | None | 200    | "netflix"      |
+| GET    | Show ToDo    | /todo         | None  | None | 200    | "todo"         |
+| GET    | Github Finder| /githubfinder | None  | None | 200    | "githubfinder" |
+| GET    | SpreadSheet  | /spreadsheet  | None  | None | 200    | "spreadsheet"  |
+
 
 ## 3. 실행 화면
 <strong>[[메인 화면]](https://jw-park.com/)</strong><br>
@@ -72,94 +156,4 @@
 
 <br>
 
-## 4. DB 설계
-<strong>[[ER-다이어그램](https://lh3.googleusercontent.com/pw/AP1GczO-BjIWtEDp3Ug5IfjGofaIV2mjnaB6fg55ZkwVLFlsNLbQEqSKD3BKL8ZZbmfdXDvkOqZWPXURhbiBJ0ZK3IgIzCncbZ0V82B93ahkZQ2eN6lMrVFqGzmaYaIoktke4lw25XDiPMdvpHZ7k7z-mgZh=w736-h536-s-no-gm?authuser=0)]</strong>
-
-### **Users**
-
-| 필드명     | 자료형 | 제약 조건            | 설명         |
-|----------|------|------------------|------------|
-| id       | long | PK, Not Null, Increment | 고유값   |
-| email    | string | Not Null           | 이메일 주소 |
-| password | string | Not Null           | 비밀번호    |
-
-### **Projects**
-
-| 필드명   | 자료형  | 제약 조건                | 설명            |
-|---------|-------|----------------------|---------------|
-| id      | long  | PK, Not Null, Increment | 고유값         |
-| title   | string | Not Null               | 프로젝트명       |
-| image   | string | Not Null               | 프로젝트 이미지    |
-| result  | string | Not Null               | 구현 페이지 링크  |
-| github  | string | Not Null               | 깃허브 링크      |
-| content | string | Not Null               | 프로젝트 설명     |
-
-### **Profiles**
-
-| 필드명      | 자료형  | 제약 조건                | 설명              |
-|-----------|-------|----------------------|-----------------|
-| id        | long  | PK, Not Null, Increment | 고유값           |
-| mainImage | string | Not Null               | 배경 이미지        |
-| about     | string | Not Null               | 자기 소개         |
-| otherOne  | string | Not Null               | OTHERS의 1번 이미지 |
-| otherTwo  | string | Not Null               | OTHERS의 2번 이미지 |
-| otherThree | string | Not Null               | OTHERS의 3번 이미지 |
-| otherFour | string | Not Null               | OTHERS의 4번 이미지 |
-| otherFive | string | Not Null               | OTHERS의 5번 이미지 |
-| otherSix  | string | Not Null               | OTHERS의 6번 이미지 |
-<br>
-
-## 5. API 설계
-
-# API Documentation
-
-## EtcController
-
-| Method | API          | Path          | Query | Body | Status | JSON Result    |
-|--------|--------------|---------------|-------|------|--------|----------------|
-| GET    | Show Youtube | /youtube      | None  | None | 200    | "youtube"      |
-| GET    | Show Netflix | /netflix      | None  | None | 200    | "netflix"      |
-| GET    | Show ToDo    | /todo         | None  | None | 200    | "todo"         |
-| GET    | Github Finder| /githubfinder | None  | None | 200    | "githubfinder" |
-| GET    | SpreadSheet  | /spreadsheet  | None  | None | 200    | "spreadsheet"  |
-
-## ProfileController
-
-| Method | API            | Path  | Query | Body  | Status | JSON Result                      |
-|--------|----------------|-------|-------|-------|--------|----------------------------------|
-| GET    | Show Main Page | /     | None  | None  | 200    | HTML page with profile data      |
-| GET    | Show Edit Page | /edit | None  | None  | 200    | HTML page with profile data      |
-| POST   | Update Profile | /update | None | mainImage, about, otherOne, otherTwo, otherThree, otherFour, otherFive, otherSix | 302 (Redirect) | Redirect to main page |
-
-## ProjectApiController
-
-| Method | API            | Path             | Query | Body                | Status | JSON Result                  |
-|--------|----------------|------------------|-------|---------------------|--------|------------------------------|
-| POST   | Add Project    | /api/projects    | None  | AddProjectRequest   | 201    | Project                      |
-| GET    | Find All Projects | /api/projects | None  | None                | 200    | List of ProjectResponse      |
-| GET    | Find Project by ID | /api/projects/{id} | None | None              | 200    | ProjectResponse              |
-| DELETE | Delete Project | /api/projects/{id} | None | None              | 200    | None                         |
-| PUT    | Update Project | /api/projects/{id} | None | UpdateProjectRequest | 200  | Project                      |
-
-## ProjectViewController
-
-| Method | API            | Path         | Query | Body | Status | JSON Result                      |
-|--------|----------------|--------------|-------|------|--------|----------------------------------|
-| GET    | Get Projects   | /projects    | None  | None | 200    | HTML page with list of projects  |
-| GET    | Get Project by ID | /projects/{id} | None | None | 200 | HTML page with project data       |
-| GET    | New Project    | /new-project | id (optional) | None | 200 | HTML page for creating a new project |
-
-## UserApiController
-
-| Method | API            | Path   | Query | Body            | Status | JSON Result           |
-|--------|----------------|--------|-------|-----------------|--------|-----------------------|
-| POST   | Signup         | /user  | None  | AddUserRequest  | 302 (Redirect) | Redirect to login page |
-| GET    | Logout         | /logout | None  | None            | 302 (Redirect) | Redirect to login page |
-
-## UserViewController
-
-| Method | API            | Path   | Query | Body | Status | JSON Result           |
-|--------|----------------|--------|-------|------|--------|-----------------------|
-| GET    | Login          | /login | None  | None | 200    | HTML login page       |
-| GET    | Signup Page    | /signup | None | None | 200    | HTML signup page      |
 
