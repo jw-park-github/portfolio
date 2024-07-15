@@ -35,6 +35,8 @@
 | email    | string | Not Null           | 이메일 주소 |
 | password | string | Not Null           | 비밀번호    |
 
+<br>
+
 ### **Projects**
 
 | 필드명   | 자료형  | 제약 조건                | 설명            |
@@ -45,6 +47,8 @@
 | result  | string | Not Null               | 구현 페이지 링크  |
 | github  | string | Not Null               | 깃허브 링크      |
 | content | string | Not Null               | 프로젝트 설명     |
+
+<br>
 
 ### **Profiles**
 
@@ -59,6 +63,8 @@
 | otherFour | string | Not Null               | OTHERS의 4번 이미지 |
 | otherFive | string | Not Null               | OTHERS의 5번 이미지 |
 | otherSix  | string | Not Null               | OTHERS의 6번 이미지 |
+
+<br>
 <br>
 
 ## 4. API 설계
@@ -123,6 +129,8 @@
 | GET    | Github Finder| /githubfinder | None  | None | 200    | "githubfinder" |
 | GET    | SpreadSheet  | /spreadsheet  | None  | None | 200    | "spreadsheet"  |
 
+<br>
+<br>
 
 ## 5. 실행 화면
 <strong>[[메인 화면]](https://jw-park.com/)</strong><br>
