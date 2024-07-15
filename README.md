@@ -6,14 +6,14 @@
 <br>
 
 ## 1. 프로젝트 개요
-<strong>ㆍ 시행처</strong>: [구름 x 인프런] 자바 스프링 & 리액트 풀스택 개발자 성장 과정<br><br>
-<strong>ㆍ 기간</strong>: 2023.12~2024.03<br><br>
-<strong>ㆍ 프로그래밍 언어</strong>: Java, HTML, CSS, JavaScript<br><br>
-<strong>ㆍ 프레임워크</strong>: Spring Boot 3.1.7<br><br>
-<strong>ㆍ 템플릿 엔진</strong>: Thymleaf, Mustache<br><br>
-<strong>ㆍ 라이브러리</strong>: Bootstrap<br><br>
-<strong>ㆍ DBMS</strong>: MySQL, H2<br><br>
-<strong>ㆍ 배포</strong>: AWS EC2<br><br>
+* 시행처</strong>: [구름 x 인프런] 자바 스프링 & 리액트 풀스택 개발자 성장 과정<br>
+* 기간</strong>: 2023.12~2024.03<br>
+* 프로그래밍 언어</strong>: Java, HTML, CSS, JavaScript<br>
+* 프레임워크</strong>: Spring Boot 3.1.7<br>
+* 템플릿 엔진</strong>: Thymleaf, Mustache<br>
+* 라이브러리</strong>: Bootstrap<br>
+* DBMS</strong>: MySQL, H2<br>
+* 배포</strong>: AWS EC2<br>
 
 ## 2. 주요 기능
 * 메인 화면(ABOUT, OTHERS) CRUD 기능
