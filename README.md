@@ -18,7 +18,7 @@
   <br>
 
 # 1. 프로젝트 개요
-* 시행처</strong>: [구름 x 인프런] 자바 스프링 & 리액트 풀스택 개발자 성장 과정<br>
+* 시행처</strong>: [카카오x구름] Spring & React 풀스택 개발자 과정<br>
 * 기간</strong>: 2023.12~2024.03<br>
 * 프로그래밍 언어</strong>: Java, HTML, CSS, JavaScript<br>
 * 프레임워크</strong>: Spring Boot 3.1.7<br>
