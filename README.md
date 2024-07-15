@@ -13,7 +13,7 @@
 * 템플릿 엔진</strong>: Thymleaf, Mustache<br>
 * 라이브러리</strong>: Bootstrap<br>
 * DBMS</strong>: MySQL, H2<br>
-* 배포</strong>: AWS EC2<br>
+* 배포</strong>: AWS EC2<br><br>
 
 ## 2. 주요 기능
 * 메인 화면(ABOUT, OTHERS) CRUD 기능
@@ -114,7 +114,7 @@
 | GET    | SpreadSheet  | /spreadsheet  | None  | None | 200    | "spreadsheet"  |
 
 
-## 3. 실행 화면
+## 5. 실행 화면
 <strong>[[메인 화면]](https://jw-park.com/)</strong><br>
 <img width="960" alt="MAIN_PAGE_2" src="https://github.com/jw-park-github/portfolio/assets/165545220/15bb7610-75d1-4e82-b55d-b3a01018be46"><br><br>
 <img width="960" alt="ABOUT_OTHERS" src="https://github.com/jw-park-github/portfolio/assets/165545220/db072cae-ffb4-441f-9e8d-4032b25f4113"><br>
