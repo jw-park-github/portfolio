@@ -111,44 +111,55 @@
 
 ## 5. API 설계
 
-#### 프로젝트 관리 API
+# API Documentation
 
-| 기능              | 메소드 | URL                | Return                 |
-|------------------|--------|--------------------|------------------------|
-| 프로젝트 조회     | GET    | `/api/projects`    | `List<ProjectResponse>` |
-| 프로젝트 등록     | POST   | `/api/projects`    | `Project`               |
-| 개별 프로젝트 조회 | GET    | `/api/projects/{id}` | `ProjectResponse`       |
-| 프로젝트 수정     | PUT    | `/api/projects/{id}` | `Project`               |
-| 프로젝트 삭제     | DELETE | `/api/projects/{id}` | `Void`                  |
+## EtcController
 
-#### 프로젝트 뷰 컨트롤러
+| Method | API          | Path          | Query | Body | Status | JSON Result    |
+|--------|--------------|---------------|-------|------|--------|----------------|
+| GET    | Show Youtube | /youtube      | None  | None | 200    | "youtube"      |
+| GET    | Show Netflix | /netflix      | None  | None | 200    | "netflix"      |
+| GET    | Show ToDo    | /todo         | None  | None | 200    | "todo"         |
+| GET    | Github Finder| /githubfinder | None  | None | 200    | "githubfinder" |
+| GET    | SpreadSheet  | /spreadsheet  | None  | None | 200    | "spreadsheet"  |
 
-| 기능                   | 메소드 | URL               | Return      |
-|-----------------------|--------|-------------------|-------------|
-| 전체 프로젝트 조회 페이지 | GET    | `/projects`       | `projectList` |
-| 개별 프로젝트 조회 페이지 | GET    | `/projects/{id}`  | `project`     |
-| 프로젝트 등록 페이지      | GET    | `/new-project`    | `newProject`  |
+## ProfileController
 
-#### 프로필 뷰 컨트롤러
+| Method | API            | Path  | Query | Body  | Status | JSON Result                      |
+|--------|----------------|-------|-------|-------|--------|----------------------------------|
+| GET    | Show Main Page | /     | None  | None  | 200    | HTML page with profile data      |
+| GET    | Show Edit Page | /edit | None  | None  | 200    | HTML page with profile data      |
+| POST   | Update Profile | /update | None | mainImage, about, otherOne, otherTwo, otherThree, otherFour, otherFive, otherSix | 302 (Redirect) | Redirect to main page |
 
-| 기능            | 메소드 | URL        | Return      |
-|----------------|--------|------------|-------------|
-| 메인 페이지 조회  | GET    | `/`        | `index`     |
-| 프로필 편집 페이지 조회 | GET    | `/edit`     | `edit`      |
-| 프로필 업데이트    | POST   | `/update`   | `redirect:/` |
+## ProjectApiController
 
+| Method | API            | Path             | Query | Body                | Status | JSON Result                  |
+|--------|----------------|------------------|-------|---------------------|--------|------------------------------|
+| POST   | Add Project    | /api/projects    | None  | AddProjectRequest   | 201    | Project                      |
+| GET    | Find All Projects | /api/projects | None  | None                | 200    | List of ProjectResponse      |
+| GET    | Find Project by ID | /api/projects/{id} | None | None              | 200    | ProjectResponse              |
+| DELETE | Delete Project | /api/projects/{id} | None | None              | 200    | None                         |
+| PUT    | Update Project | /api/projects/{id} | None | UpdateProjectRequest | 200  | Project                      |
 
-#### 사용자 관리 API
+## ProjectViewController
 
-| 기능         | 메소드 | URL       | Return               |
-|--------------|--------|-----------|----------------------|
-| 사용자 회원가입 | POST   | `/user`   | `signup` / `redirect:/login` |
-| 로그아웃       | GET    | `/logout` | `redirect:/login`            |
+| Method | API            | Path         | Query | Body | Status | JSON Result                      |
+|--------|----------------|--------------|-------|------|--------|----------------------------------|
+| GET    | Get Projects   | /projects    | None  | None | 200    | HTML page with list of projects  |
+| GET    | Get Project by ID | /projects/{id} | None | None | 200 | HTML page with project data       |
+| GET    | New Project    | /new-project | id (optional) | None | 200 | HTML page for creating a new project |
 
-#### 사용자 뷰 컨트롤러
+## UserApiController
 
-| 기능          | 메소드 | URL        | Return   |
-|---------------|--------|------------|----------|
-| 로그인 페이지 조회 | GET    | `/login`   | `login`   |
-| 회원가입 페이지 조회 | GET    | `/signup`  | `signup`  |
+| Method | API            | Path   | Query | Body            | Status | JSON Result           |
+|--------|----------------|--------|-------|-----------------|--------|-----------------------|
+| POST   | Signup         | /user  | None  | AddUserRequest  | 302 (Redirect) | Redirect to login page |
+| GET    | Logout         | /logout | None  | None            | 302 (Redirect) | Redirect to login page |
+
+## UserViewController
+
+| Method | API            | Path   | Query | Body | Status | JSON Result           |
+|--------|----------------|--------|-------|------|--------|-----------------------|
+| GET    | Login          | /login | None  | None | 200    | HTML login page       |
+| GET    | Signup Page    | /signup | None | None | 200    | HTML signup page      |
 
