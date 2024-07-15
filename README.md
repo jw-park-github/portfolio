@@ -22,7 +22,7 @@
 * 회원가입
 * 로그인
 * 유효성 검사 및 중복 검사
-* 게시물 CRUD 권한이 부여된 관리자 계정<br>
+* 게시물 CRUD 권한이 부여된 관리자 계정<br><br>
 
 ## 3. DB 설계
 <strong>[[ER-다이어그램](https://lh3.googleusercontent.com/pw/AP1GczO-BjIWtEDp3Ug5IfjGofaIV2mjnaB6fg55ZkwVLFlsNLbQEqSKD3BKL8ZZbmfdXDvkOqZWPXURhbiBJ0ZK3IgIzCncbZ0V82B93ahkZQ2eN6lMrVFqGzmaYaIoktke4lw25XDiPMdvpHZ7k7z-mgZh=w736-h536-s-no-gm?authuser=0)]</strong>
